@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Beats Portfolio | Tek Bahadur Khatri | UWE Bristol</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10c881; /* UWE Bristol Red */
+            --secondary: #4c709a; /* UWE Bristol Navy */
+            --accent: #00A3E0; /* UWE Bristol Blue */
+            --light: #F8F9FA;
+            --dark: #121212;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/uwe.logo.png') center/cover no-repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: rgb(187, 166, 94);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .uwe-logo {
+            height: 60px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: rgb(0, 112, 86);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(rgba(200, 16, 46, 0.9), rgba(0, 33, 71, 0.9)), url('https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') center/cover no-repeat;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 163, 224, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 163, 224, 0.5);
+            background: #0093c4;
+        }
+        
+        /* Assignment Overview */
+        .assignment-section {
+            padding: 4rem 2rem;
+            background: white;
+            max-width: 1200px;
+            margin: -50px auto 2rem auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            color: var(--secondary);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .assignment-content {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+        
+        .assignment-text {
+            flex: 1;
+        }
+        
+        .assignment-text h4 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .assignment-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .assignment-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .assignment-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .assignment-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .module-details {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .detail-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--accent);
+        }
+        
+        .detail-card h5 {
+            color: var(--secondary);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+        
+        .detail-card p {
+            color: var(--gray);
+        }
+        
+        /* Projects Section */
+        .projects-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .project-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-image {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+        
+        .project-content {
+            padding: 1.8rem;
+        }
+        
+        .project-content h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 0.8rem;
+        }
+        
+        .project-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .project-link:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+        
+        .project-link i {
+            margin-left: 5px;
+            transition: margin-left 0.3s ease;
+        }
+        
+        .project-link:hover i {
+            margin-left: 10px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--secondary) 0%, #00122e 100%);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+        
+        .footer-about h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-about h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .footer-about p {
+            opacity: 0.85;
+            line-height: 1.8;
+        }
+        
+        .footer-links h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+        
+        .footer-contact h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-contact h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .contact-item i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .assignment-content {
+                flex-direction: column;
+            }
+            
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+            
+            .header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h3 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-links {
+                gap: 0.5rem;
+            }
+            
+            .nav-links a {
+                font-size: 0.95rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with UWE Logo -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/55/University_of_the_West_of_England_logo.svg/320px-University_of_the_West_of_England_logo.svg.png" alt="UWE Bristol Logo" class="uwe-logo">
+            <div class="logo-text">
+                <h1>Urban Beats Portfolio</h1>
+                <p>Graphic & Web Design Studio | UFCFHL-30-1</p>
+            </div>
+        </div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="carp.html">CARP Project</a></li>
+                <li><a href="typography.html">Typography</a></li>
+                <li><a href="project3.html">Design Project</a></li>
+                <li><a href="reflection.html">Reflection</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Urban Beats: Student Music Night 2024</h2>
+            <p>This portfolio showcases design projects created as part of the Graphic & Web Design Studio module at UWE Bristol</p>
+            <a href="#projects" class="cta-button">View Projects <i class="fas fa-arrow-down"></i></a>
+        </div>
+    </section>
+    
+    <!-- Assignment Overview Section -->
+    <section class="assignment-section">
+        <div class="section-title">
+            <h3>Project Overview</h3>
+        </div>
+        
+        <div class="assignment-content">
+            <div class="assignment-text">
+                <h4>Design Fundamentals Website Project</h4>
+                <p>This project explores key themes in both web design and graphic design, generating a range of work that will be presented in your own hand-coded website made from the foundational principles of HTML and CSS.</p>
+                <p>In semester one you will create a series of 3 projects and one reflection essay relating to graphic design, web design, and typography. Using the fundamentals of HTML and CSS learned in this class you will build a static website to present the graphic, and typographic foundations you have learned.</p>
+                <p>Using GitHub, you will build your website from scratch and utilize version control to manage your code. You will publish and host your static website using GitHub Pages.</p>
+            </div>
+            <div class="assignment-image">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Design Process">
+            </div>
+        </div>
+        
+        <div class="module-details">
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h5><i class="fas fa-calendar-alt"></i> Deadline</h5>
+                    <p>Thursday, December 12, 2024 at 13:59</p>
+                </div>
+                <div class="detail-card">
+                    <h5><i class="fas fa-percentage"></i> Weighting</h5>
+                    <p>40% of Coursework Total</p>
+                </div>
+                <div class="detail-card">
+                    <h5><i class="fas fa-laptop-code"></i> Deliverables</h5>
+                    <p>HTML/CSS Website with 3 projects + reflection essay</p>
+                </div>
+                <div class="detail-card">
+                    <h5><i class="fas fa-user-graduate"></i> Student</h5>
+                    <p>Tek Bahadur Khatri | BSc Digital Media</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="section-title">
+            <h3>Featured Projects</h3>
+        </div>
+        
+        <div class="project-cards">
+            <!-- CARP Project -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1776&q=80" alt="CARP Project">
+                </div>
+                <div class="project-content">
+                    <h4>CARP Principles Project</h4>
+                    <p>Exploring Contrast, Alignment, Repetition, and Proximity in design through a poster for Urban Beats 2024.</p>
+                    <a href="carp.html" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Typography Project -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Typography Project">
+                </div>
+                <div class="project-content">
+                    <h4>Typography Project</h4>
+                    <p>Demonstrating the effective use of typography in design with a focus on hierarchy, readability, and aesthetics.</p>
+                    <a href="typography.html" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Design Project -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1463171379579-3fdfb86d6285?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Design Project">
+                </div>
+                <div class="project-content">
+                    <h4>Design Project</h4>
+                    <p>Creating a comprehensive branding system for Urban Beats including logo, color scheme, and visual elements.</p>
+                    <a href="project3.html" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h4>About This Project</h4>
+                <p>This portfolio website was created as part of the Graphic & Web Design Studio module at UWE Bristol. The project explores fundamental design principles and web development techniques.</p>
+                <p>All work is original and created by Tek Bahadur Khatri for educational purposes.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="carp.html"><i class="fas fa-palette"></i> CARP Project</a></li>
+                    <li><a href="typography.html"><i class="fas fa-font"></i> Typography</a></li>
+                    <li><a href="project3.html"><i class="fas fa-pencil-ruler"></i> Design Project</a></li>
+                    <li><a href="reflection.html"><i class="fas fa-book-open"></i> Reflection</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Contact Information</h4>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-university"></i>
+                        <div>
+                            <p>University of the West of England</p>
+                            <p>Frenchay Campus, Bristol BS16 1QY</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <p>Module Leaders:</p>
+                            <p>mary4.jackson@uwe.ac.uk</p>
+                            <p>gigi.zheng@uwe.ac.uk</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-user-graduate"></i>
+                        <div>
+                            <p>Tek Bahadur Khatri</p>
+                            <p>BSc Digital Media</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2024 Urban Beats Portfolio | Created by Tek Bahadur Khatri | University of the West of England, Bristol</p>
+            <p>This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" style="color: #00A3E0; text-decoration: none;">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></p>
+            <p>All UWE Bristol branding used with permission for educational purposes</p>
+        </div>
+    </footer>
+</body>
+</html>

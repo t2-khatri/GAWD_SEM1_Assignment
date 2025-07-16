@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CARP Principles | Design Journal</title>
+  <!-- Importing Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset and box-sizing rule */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    /* Navigation Bar */
+    .main-nav {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: #FFB6B9;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      background-color: #FAE3D9;
+    }
+
+    /* Header styling */
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #FFB6B9;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #666;
+    }
+
+    /* Responsive grid for CARP principles */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    /* Individual principle cards */
+    .card {
+      background-color: #FAE3D9;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      color: #BBDED6;
+      margin-bottom: 0.8rem;
+    }
+
+    .card p {
+      font-size: 1rem;
+    }
+
+    /* Section showing poster redesign */
+    .poster-section {
+      background: #fdfdfd;
+      padding: 2rem;
+      border: 2px dashed #FFB6B9;
+      border-radius: 15px;
+      margin-bottom: 3rem;
+    }
+
+    .poster-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      color: #FFB6B9;
+    }
+
+    .posters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .poster {
+      width: 280px;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid #eee;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    .poster.good {
+      border-left: 5px solid #BBDED6;
+    }
+
+    .poster.bad {
+      border-left: 5px solid #FFB6B9;
+    }
+
+    .poster h4 {
+      margin-bottom: 0.6rem;
+      color: #555;
+    }
+
+    .reflection {
+      background-color: #f9f9f9;
+      padding: 2rem;
+      border-left: 5px solid #BBDED6;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .reflection p + p {
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="carp.html" class="active">CARP</a></li>
+      <li><a href="typography.html">Typography</a></li>
+      <li><a href="project3.html">Project 3</a></li>
+      <li><a href="reflection.html">Reflection</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Header -->
+  <header>
+    <h1>The Art of CARP</h1>
+    <p>Contrast, Alignment, Repetition, Proximity in Visual Design</p>
+  </header>
+
+  <!-- Four CARP principle explanation cards -->
+  <section class="grid">
+    <div class="card">
+      <h2>Contrast</h2>
+      <p>We used soft pink text on a dark mint background for the event title, helping it stand out and set the mood for Urban Beats.</p>
+    </div>
+    <div class="card">
+      <h2>Alignment</h2>
+      <p>All elements were arranged in a symmetrical grid, making everything feel balanced and polished.</p>
+    </div>
+    <div class="card">
+      <h2>Repetition</h2>
+      <p>Repeated circle shapes and typefaces gave the poster a clean, consistent identity across all materials.</p>
+    </div>
+    <div class="card">
+      <h2>Proximity</h2>
+      <p>Text blocks like date, time, and venue were grouped together to help users quickly find relevant details.</p>
+    </div>
+  </section>
+
+  <!-- Section to show before and after poster redesign comparison -->
+  <section class="poster-section">
+    <h3>Poster Redesign Before & After</h3>
+    <div class="posters">
+      <div class="poster bad">
+        <h4>Before (Bad)</h4>
+        <p>Cluttered layout, low contrast, too many fonts</p>
+      </div>
+      <div class="poster good">
+        <h4>After (Good)</h4>
+        <p>Clean hierarchy, pastel tones, cohesive structure</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reflective learning section -->
+  <section class="reflection">
+    <p>This project was a creative challenge and a joyful learning experience. Designing for a music event like Urban Beats allowed me to explore playful color palettes and experiment with layout techniques.</p>
+    <p>Learning about CARP principles helped me think more critically about every design choice—from font pairing to element spacing. I now feel more confident using structure and contrast to guide the viewer’s eye and create designs that not only look good, but communicate effectively.</p>
+  </section>
+
+  <!-- Footer with student and module info -->
+  <footer>
+    <p>© 2024 Tek Bahadur Khatri | Graphic & Web Design Studio | UWE Bristol</p>
+  </footer>
+</body>
+</html>

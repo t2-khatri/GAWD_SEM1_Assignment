@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typography Showcase | Urban Beats</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: #f4f4f9;
+      color: #222;
+      padding: 2rem;
+    }
+
+    nav {
+      background-color: #0d0d0d;
+      padding: 1rem;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav a {
+      color: #f2f2f2;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #ff4081;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #ff4081;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      padding-bottom: 1rem;
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+    }
+
+    .card h3 {
+      text-align: center;
+      margin: 1rem 0 0.5rem;
+      color: #333;
+    }
+
+    .card p {
+      text-align: center;
+      color: #666;
+      padding: 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .ticket-explained {
+      max-width: 800px;
+      margin: 4rem auto;
+      background-color: #fff;
+      padding: 2rem;
+      border-left: 5px solid #ff4081;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .ticket-explained img {
+      width: 100%;
+      max-width: 600px;
+      aspect-ratio: 3 / 1;
+      object-fit: contain;
+      margin: 0 auto 1rem;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .ticket-explained h2 {
+      color: #ff4081;
+      margin-bottom: 1rem;
+    }
+
+    .ticket-explained p {
+      color: #444;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .reflection {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 2rem;
+      border-left: 5px solid #ff4081;
+      border-radius: 12px;
+      font-size: 1rem;
+      color: #444;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="carp.html">CARP</a></li>
+      <li><a href="typography.html" class="active">Typography</a></li>
+      <li><a href="project3.html">Project 3</a></li>
+      <li><a href="reflection.html">Reflection</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Typography Showcase</h1>
+    <p>Highlighting visual rhythm, scale, and typographic harmony</p>
+  </header>
+
+  <section class="gallery">
+    <div class="card">
+      <img src="images/typo copy.svg" alt="Modular Typography">
+      <h3>Modular Grid</h3>
+      <p>Designed with vertical and horizontal rhythm, ideal for music branding.</p>
+    </div>
+    <div class="card">
+      <img src="images/poster copy.svg" alt="Poster Typography">
+      <h3>Layered Display</h3>
+      <p>Combines bold shapes with clean type for visual energy and hierarchy.</p>
+    </div>
+    <div class="card">
+      <img src="images/ticket2.svg" alt="Ticket Typography">
+      <h3>Axial Layout</h3>
+      <p>Uses angled alignment and compact hierarchy for functional design.</p>
+    </div>
+  </section>
+
+  <section class="ticket-explained">
+    <div class="card">
+  <img src="images/ticket2.svg" alt="Urban Beats Ticket">
+  <h3>Urban Ticket Design</h3>
+  <p>Showcases bold type in a functional event format.</p>
+</div>
+
+    <p>The Urban Beats ticket design is crafted in a wide rectangular format, reflecting the practical structure of real-world event tickets. Its use of clean sans-serif type ensures immediate readability, while a clear typographic hierarchy directs attention from event name, to time and location, then finally to barcode information.</p>
+    <p>The layout features bold color zones that divide the ticket into functional parts, such as entry validation and promotional space. The axial composition runs from left to right, guiding the eye naturally while reinforcing the ticket’s flow. The QR code placement supports modern scanning systems and the balance between white space and content reinforces a modern, breathable aesthetic.</p>
+    <p>Altogether, this typographic ticket presentation supports both aesthetic branding and real-use functionality, making it a powerful blend of design and purpose.</p>
+  </section>
+
+  <section class="reflection">
+    <p>Through this typography project, I developed a deeper appreciation for how typefaces, layout, and composition influence the user experience. Each design allowed me to explore different structures, from strict modular grids to expressive axial arrangements.</p>
+    <p>This process not only improved my technical design skills in tools like Illustrator and Photoshop, but also gave me clarity on using typography to communicate mood, clarity, and brand identity effectively.</p>
+  </section>
+
+  <footer>
+    <p>© 2024 Tek Bahadur Khatri | Graphic & Web Design Studio | UWE Bristol</p>
+  </footer>
+</body>
+</html>
